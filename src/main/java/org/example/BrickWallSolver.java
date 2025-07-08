@@ -10,7 +10,7 @@ public class BrickWallSolver {
         long result_9_3 = solver.countWallConfigurations(9, 3);
         System.out.println("W(9, 3) = " + result_9_3 + " (should be 8)");
 
-        // main problem
+        // Main problem
         long startTime = System.currentTimeMillis();
         long result_32_10 = solver.countWallConfigurations(32, 10);
         long endTime = System.currentTimeMillis();
@@ -44,14 +44,14 @@ public class BrickWallSolver {
 
         if (currentWidth > targetWidth) return;
 
-        // Try a 2x1 brick
+        // try a 2x1 brick
         if (currentWidth + 2 <= targetWidth) {
             currentBricks.add(2);
             backtrack(targetWidth, currentWidth + 2, currentBricks, configurations);
             currentBricks.remove(currentBricks.size() - 1);
         }
 
-        // Try a 3x1 brick
+        // try a 3x1 brick
         if (currentWidth + 3 <= targetWidth) {
             currentBricks.add(3);
             backtrack(targetWidth, currentWidth + 3, currentBricks, configurations);
